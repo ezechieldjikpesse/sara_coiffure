@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Portfolio - HERITAGE LUXE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#3e0500",
+                        "primary": "#26170c",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "secondary-fixed": "#ffdfa0",
+                        "on-primary-fixed-variant": "#574335",
+                        "primary-fixed": "#fbddca",
+                        "surface-variant": "#e5e2df",
+                        "tertiary-fixed": "#ffdad3",
+                        "tertiary-container": "#5f1104",
+                        "outline-variant": "#d2c4bc",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-dim": "#ddd9d6",
+                        "surface": "#fdf9f6",
+                        "primary-container": "#3d2b1f",
+                        "on-primary-fixed": "#28180d",
+                        "tertiary": "#3c0400",
+                        "on-secondary-container": "#6d5000",
+                        "surface-container": "#f1edea",
+                        "outline": "#81756e",
+                        "inverse-primary": "#dec1af",
+                        "on-background": "#1c1b1a",
+                        "inverse-surface": "#31302f",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#e7765f",
+                        "on-primary-container": "#ac9181",
+                        "surface-tint": "#705a4c",
+                        "surface-bright": "#fdf9f6",
+                        "secondary-fixed-dim": "#fbbc00",
+                        "secondary-container": "#ffbf00",
+                        "surface-container-low": "#f7f3f0",
+                        "on-tertiary-fixed-variant": "#802918",
+                        "tertiary-fixed-dim": "#ffb4a5",
+                        "primary-fixed-dim": "#dec1af",
+                        "secondary": "#795900",
+                        "surface-container-high": "#ebe7e4",
+                        "on-surface": "#1c1b1a",
+                        "on-surface-variant": "#4f453f",
+                        "background": "#fdf9f6",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e5e2df",
+                        "inverse-on-surface": "#f4f0ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "xl": "80px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Montserrat"],
+                        "body-lg": ["Montserrat"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "caption": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "headline-sm": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+
+        .bogolan-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2326170c' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 20px 40px rgba(38, 23, 12, 0.08);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-surface text-on-surface font-body-md min-h-screen relative pb-32 md:pb-0 pt-24 md:pt-32 bogolan-pattern">
+    <!-- Top App Bar (Desktop & Mobile Anchor) -->
+    <header
+        class="hidden md:flex fixed top-0 w-full z-50 backdrop-blur-md bg-surface/90 shadow-sm transition-all duration-300 ease-in-out">
+        <div class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max mx-auto">
+            <div class="flex items-center space-x-4">
+
+                <span class="font-display-lg text-display-lg tracking-tighter text-primary">HERITAGE LUXE</span>
+            </div>
+            <nav class="flex space-x-8">
+                <!-- Navigation Items extrapolated from intent, as exact desktop nav items weren't strictly provided, but aligning with mobile logic -->
+                <a class="font-label-md text-label-md text-primary font-bold hover:text-secondary transition-colors"
+                    href="index.html">Home</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors"
+                    href="service.html">Services</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors"
+                    href="portfolio.html">Réalisation</a>
+            </nav>
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant">
+                    <img alt="Stylist Profile" class="w-full h-full object-cover"
+                        data-alt="A close-up portrait of a sophisticated Beninese freelance hair stylist with a warm, welcoming smile. She has elegantly styled natural hair. The lighting is soft and flattering, highlighting her flawless skin against a clean, minimalist studio background in light terracotta tones. Professional and premium styling."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe56N7fwaKHjiDcI_omTPhRcpFc2bsvBsB2NbqFRJux12fCw0hhfgX6k8qf_Y06LoAlR8AL8m2mrqRvUGjD1j1h_bZuKFgt5X1em9gG2H58vv6qLf3_WAN0w0Z66rldd6WHhcGqeTb6FHpNDBHdW8QDVDDB6rlO4mPDXN6W_VFHKxcGULklkrvyy7MtPLOPHbXssBdRgbmTPEfE3BJv5tJiEOCImHxawIGfS7hxJ0m7u9APVsxmudz" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="max-w-[1200px] mx-auto px-4 md:px-gutter">
+        <!-- Page Header -->
+        <div class="text-center mb-xl">
+            <h2 class="font-headline-md md:font-display-lg text-headline-md md:text-display-lg text-primary mb-4">L'Art
+                de la Coiffure</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Une sélection de nos réalisations les plus prestigieuses, mêlant techniques ancestrales et élégance
+                contemporaine.
+            </p>
+        </div>
+        <!-- Asymmetric Bento Grid Gallery -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[250px] md:auto-rows-[300px]">
+            <!-- Large Featured Image -->
+            <div
+                class="md:col-span-8 md:row-span-2 group relative overflow-hidden rounded-xl border border-secondary/30 ambient-shadow bg-surface-container">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    data-alt="A stunning high-end photography shot of a Black woman with intricate, complex geometric cornrow braids, styled in a sophisticated updo. The lighting is soft and luxurious, casting a warm golden glow on her skin. The background is a minimalist, organic space with subtle terracotta tones and a sense of calm elegance. High-fashion editorial style."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIY_G7xPhnElRXGa-F6ElqBO7tOo58gPmzCp8gYSW0zbc2u6O88p6rCzJf0ybv0BjvhbCv84XtKdYOt9t0FKV_Nu7PIHEtxPbbReS1TtAmIbn2dX_VXe4ruGEc_C1oHMg50HLojPqKO4oJgvqPghJs6AUsqnCS8gV4zrMKIjLFt4u5w87r6nfifsGIvKqORhc99U-meZBHtFJK3fbaLaakG1AwWqlRXdAwTGJpGMeeK5YcIUHWZBo_" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <div class="text-on-primary">
+                        <h3 class="font-headline-sm text-headline-sm mb-2">Tresses Architecturales</h3>
+                        <p class="font-body-md text-body-md opacity-90">Design sur mesure</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Tall Side Image -->
+            <div
+                class="md:col-span-4 md:row-span-2 group relative overflow-hidden rounded-xl border border-secondary/30 ambient-shadow bg-surface-container">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    data-alt="Close-up portrait of a woman with perfectly sculpted, high-gloss finger waves and elegant baby hairs. The mood is retro-glamour meeting modern luxury. Soft, warm directional lighting highlights the texture of the hair against a deep, dark brown background, emphasizing the artisanal precision of the stylist's work."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_UuSBnn24JWdCyAQQHSEcyneg03TO_1nRQWTzidnftU1IYk59FaRZ-_mqDjiYqBLPWF0V5OmE0RmFsWBuUF2HcZb8IjMZk4RwqhdABlW8S64-90NGNPbTRHpyD8OjV3NcG7n6qZUk9bftsGv0liZInD-nu6flDQ98yjmoIXGMl1LiZXxxiAGqNB2yrbUJuxcl399Ks7WS9OTzmhRSHR1RmGXOGBy4bckgD9ARDifo3F_J7r39W7Gl" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <div class="text-on-primary">
+                        <h3 class="font-headline-sm text-headline-sm mb-2">Ondes Sculptées</h3>
+                        <p class="font-body-md text-body-md opacity-90">Élégance intemporelle</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Medium Image 1 -->
+            <div
+                class="md:col-span-4 md:row-span-1 group relative overflow-hidden rounded-xl border border-secondary/30 ambient-shadow bg-surface-container">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    data-alt="A beautifully styled natural afro, full of volume and hydration, caught in soft natural light. The model is turned slightly, showcasing the round, halo-like silhouette of the hair. The setting is a bright, serene atelier with warm beige and subtle terracotta accents in the softly blurred background."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSoP_mdLkrPVcoN_g3jhUKkJbRxvyODXR9uEcbffY5yLCmoT-1TBLPcBr7h4c3HD1DqHdM6ESJSQd3YqanV2EpPQzRvi0yKOovrd2uC2M7CeazeOXxA8g4n_zskQ_S_O7ZVR0Hr5a2ndm3H8SSmeVHUNOzSB6waoZH17Smda9UXPB-nGN6hKx8E_F_1SbmSLmBM_7Znjsjt0UE2IFgqn_E7Cy7fgywBr1OqRdjWfMMW_7tdp2Gxy27" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <div class="text-on-primary">
+                        <h3 class="font-headline-sm text-headline-sm">Volume Naturel</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Medium Image 2 -->
+            <div
+                class="md:col-span-4 md:row-span-1 group relative overflow-hidden rounded-xl border border-secondary/30 ambient-shadow bg-surface-container">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    data-alt="Detailed macro shot focusing on a complex knotless box braid installation. The image highlights the clean parting and flawless tension of the braids at the scalp. The lighting is crisp and illuminating, emphasizing the high-end, impeccable craftsmanship of the stylist in a minimalist studio environment."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfeUTVvm_N-3xa7DzDHoCDt-a8K6um1tggbG3T8U3T-ZzT6WgJQjAS5VQodHbDMiWFC3r0vVysqi5iW3oSpA6Dtf98W3il8M32VS8x5GbKmjGFa8PC0ux7qy9aJ0_EK4XINIWgBDJvR7IB3DHwvzcvaIjQmGo2swQW6RBDnP5FEVvw7RlbOEfsMnBXww_MkE1OSJAKi-qMUMTH9jfVnoDvZEkv8wYT4Qj1DvTCSM1-Cefd6Hrze_YO" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <div class="text-on-primary">
+                        <h3 class="font-headline-sm text-headline-sm">Précision Absolue</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Medium Image 3 -->
+            <div
+                class="md:col-span-4 md:row-span-1 group relative overflow-hidden rounded-xl border border-secondary/30 ambient-shadow bg-surface-container">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    data-alt="A profile view of a stunning bridal updo featuring intricate twists and a subtle gold hair accessory woven into the dark hair. The aesthetic is regal, sophisticated, and luxurious. Soft, ambient lighting creates a romantic mood, set against a pristine, light-mode background with soft organic textures."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUKIWUlvCCJcKYbCRbQY1OyCzFFyJ_eKfxxXkRoaS-1jl4U6UveTRTO3sbuWWd883iUBSBsJGlzYy2hTBjskEhes3DViq_Vk79wsAaLuCkWdAcVxUnie7RHTttMmuadFdW6PQrPWe_1dLKBsMlKYSwsCs2QLjw7r0GdfbCJ1Sz4JwnwYDwkZ1Bk_i-j_xjGC8ANvt_igCPQEVJ6PyXIbV1JPJEfgYbzERQHfze6d-UFBORVzweJxla" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <div class="text-on-primary">
+                        <h3 class="font-headline-sm text-headline-sm">Coiffure de Mariée</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call to Action -->
+        <div class="mt-xl text-center flex flex-col items-center">
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-lg">
+                Chaque création est une œuvre unique, pensée pour sublimer votre essence.
+            </p>
+            <a href="./reservation.html"
+                class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-8 py-4 rounded-full ambient-shadow hover:scale-105 transition-transform duration-300 flex items-center space-x-2">
+                <span>Prendre Rendez-vous</span>
+                <span class="material-symbols-outlined text-xl">arrow_forward</span>
+            </a>
+        </div>
+    </main>
+    <!-- Bottom Navigation Bar (Mobile Only) -->
+    <!-- {{DATA:COMPONENTS:COMPONENTS_3}} -->
+
+    <nav
+        class="md:hidden fixed bottom-base left-base right-base rounded-full z-50 bg-surface-container/95 backdrop-blur-lg shadow-[0_20px_40px_rgba(38,23,12,0.1)] flex justify-around items-center p-2">
+        <a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-2 hover:scale-110 transition-transform active:scale-95 duration-200"
+            href="./index.html">
+            <span class="material-symbols-outlined fill text-[24px] mb-1">home</span>
+            <span class="font-label-md text-label-md text-[10px]">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-2 hover:scale-110 transition-transform active:scale-95 duration-200"
+            href="./service.html">
+            <span class="material-symbols-outlined text-[24px] mb-1">content_cut</span>
+            <span class="font-label-md text-label-md text-[10px]">Services</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-2 hover:scale-110 transition-transform active:scale-95 duration-200"
+            href="./portfolio.html">
+            <span class="material-symbols-outlined text-[24px] mb-1">auto_awesome</span>
+            <span class="font-label-md text-label-md text-[10px]">Work</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-2 hover:scale-110 transition-transform active:scale-95 duration-200"
+            href="./reservation.html">
+            <span class="material-symbols-outlined text-[24px] mb-1">calendar_month</span>
+            <span class="font-label-md text-label-md text-[10px]">Book</span>
+        </a>
+    </nav>
+
+
+</body>
+
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Héritage Luxe - Coiffeuse à Cotonou</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#3e0500",
+                        "primary": "#26170c",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "secondary-fixed": "#ffdfa0",
+                        "on-primary-fixed-variant": "#574335",
+                        "primary-fixed": "#fbddca",
+                        "surface-variant": "#e5e2df",
+                        "tertiary-fixed": "#ffdad3",
+                        "tertiary-container": "#5f1104",
+                        "outline-variant": "#d2c4bc",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-dim": "#ddd9d6",
+                        "surface": "#fdf9f6",
+                        "primary-container": "#3d2b1f",
+                        "on-primary-fixed": "#28180d",
+                        "tertiary": "#3c0400",
+                        "on-secondary-container": "#6d5000",
+                        "surface-container": "#f1edea",
+                        "outline": "#81756e",
+                        "inverse-primary": "#dec1af",
+                        "on-background": "#1c1b1a",
+                        "inverse-surface": "#31302f",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#e7765f",
+                        "on-primary-container": "#ac9181",
+                        "surface-tint": "#705a4c",
+                        "surface-bright": "#fdf9f6",
+                        "secondary-fixed-dim": "#fbbc00",
+                        "secondary-container": "#ffbf00",
+                        "surface-container-low": "#f7f3f0",
+                        "on-tertiary-fixed-variant": "#802918",
+                        "tertiary-fixed-dim": "#ffb4a5",
+                        "primary-fixed-dim": "#dec1af",
+                        "secondary": "#795900",
+                        "surface-container-high": "#ebe7e4",
+                        "on-surface": "#1c1b1a",
+                        "on-surface-variant": "#4f453f",
+                        "background": "#fdf9f6",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e5e2df",
+                        "inverse-on-surface": "#f4f0ed"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        lg: "48px",
+                        gutter: "24px",
+                        xl: "80px",
+                        xs: "4px",
+                        md: "24px",
+                        sm: "12px",
+                        base: "8px",
+                        "container-max": "1200px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Montserrat"],
+                        "body-lg": ["Montserrat"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "caption": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "headline-sm": ["Playfair Display"]
+                    },
+                    fontSize: {
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "display-lg-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 100ms;
+        }
+
+        .delay-200 {
+            animation-delay: 200ms;
+        }
+
+        .delay-300 {
+            animation-delay: 300ms;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 20px 40px rgba(38, 23, 12, 0.08);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+    <!-- Top Navigation (Desktop) -->
+    <header
+        class="hidden md:flex fixed top-0 w-full z-50 backdrop-blur-md bg-surface/90 shadow-sm transition-all duration-300 ease-in-out">
+        <div class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max mx-auto">
+            <div class="flex items-center space-x-4">
+
+                <span class="font-display-lg text-display-lg tracking-tighter text-primary">HERITAGE LUXE</span>
+            </div>
+            <nav class="flex space-x-8">
+                <!-- Navigation Items extrapolated from intent, as exact desktop nav items weren't strictly provided, but aligning with mobile logic -->
+                <a class="font-label-md text-label-md text-primary font-bold hover:text-secondary transition-colors"
+                    href="index.html">Home</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors"
+                    href="service.html">Services</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors"
+                    href="portfolio.html">Réalisation</a>
+            </nav>
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant">
+                    <img alt="Stylist Profile" class="w-full h-full object-cover"
+                        data-alt="A close-up portrait of a sophisticated Beninese freelance hair stylist with a warm, welcoming smile. She has elegantly styled natural hair. The lighting is soft and flattering, highlighting her flawless skin against a clean, minimalist studio background in light terracotta tones. Professional and premium styling."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe56N7fwaKHjiDcI_omTPhRcpFc2bsvBsB2NbqFRJux12fCw0hhfgX6k8qf_Y06LoAlR8AL8m2mrqRvUGjD1j1h_bZuKFgt5X1em9gG2H58vv6qLf3_WAN0w0Z66rldd6WHhcGqeTb6FHpNDBHdW8QDVDDB6rlO4mPDXN6W_VFHKxcGULklkrvyy7MtPLOPHbXssBdRgbmTPEfE3BJv5tJiEOCImHxawIGfS7hxJ0m7u9APVsxmudz" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="flex-grow pb-24 md:pb-0">
+        <!-- Hero Section with Shader -->
+        <section class="relative w-full h-[751px] md:h-screen flex items-center justify-center overflow-hidden">
+            <!-- Shader Background -->
+            <!-- STITCH_SHADER_START:ANIMATION_2 class="absolute inset-0 w-full h-full object-cover" -->
+            <div class="absolute inset-0 w-full h-full object-cover" style="display:block;">
+                <canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
+                <script>
+                        (function () {
+                            const canvas = document.getElementById('shader-canvas-ANIMATION_2');
+
+                            // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+                            // This fires on initial layout and whenever the element is resized.
+                            function syncSize() {
+                                const w = canvas.clientWidth || 1280;
+                                const h = canvas.clientHeight || 720;
+                                if (canvas.width !== w || canvas.height !== h) {
+                                    canvas.width = w;
+                                    canvas.height = h;
+                                }
+                            }
+                            if (typeof ResizeObserver !== 'undefined') {
+                                new ResizeObserver(syncSize).observe(canvas);
+                            }
+                            syncSize();
+
+                            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+                            if (!gl) return;
+                            const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+                            const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Create a flowing organic motion
+    float wave1 = sin(uv.x * 3.0 + u_time * 0.5) * 0.1;
+    float wave2 = cos(uv.y * 2.0 - u_time * 0.3) * 0.1;
+    
+    // Background color: Deep chocolate/brown (from Heritage Luxe)
+    vec3 color1 = vec3(0.239, 0.169, 0.122); // #3d2b1f
+    // Accent color: Golden amber
+    vec3 color2 = vec3(0.85, 0.65, 0.13); // Gold
+    
+    float mixFactor = smoothstep(0.4, 0.6, uv.y + wave1 + wave2);
+    vec3 finalColor = mix(color1, color2 * 0.2, mixFactor);
+    
+    // Add subtle shimmer
+    float shimmer = sin(uv.x * 20.0 + uv.y * 10.0 + u_time) * 0.02;
+    finalColor += shimmer;
+
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+                            function cs(type, src) {
+                                const s = gl.createShader(type);
+                                gl.shaderSource(s, src);
+                                gl.compileShader(s);
+                                return s;
+                            }
+                            const prog = gl.createProgram();
+                            gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+                            gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+                            gl.linkProgram(prog);
+                            gl.useProgram(prog);
+                            const buf = gl.createBuffer();
+                            gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+                            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+                            const pos = gl.getAttribLocation(prog, 'a_position');
+                            gl.enableVertexAttribArray(pos);
+                            gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+                            const uTime = gl.getUniformLocation(prog, 'u_time');
+                            const uRes = gl.getUniformLocation(prog, 'u_resolution');
+                            const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+                            // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+                            // Shaders that need normalized coords should use: u_mouse / u_resolution.
+                            let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+                            window.addEventListener('mousemove', (event) => {
+                                const rect = canvas.getBoundingClientRect();
+                                if (rect.width && rect.height) {
+                                    const nx = (event.clientX - rect.left) / rect.width;
+                                    const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+                                    mouse.x = nx * canvas.width;
+                                    mouse.y = ny * canvas.height;
+                                }
+                            });
+
+                            function render(t) {
+                                if (typeof ResizeObserver === 'undefined') syncSize();
+                                gl.viewport(0, 0, canvas.width, canvas.height);
+                                if (uTime) gl.uniform1f(uTime, t * 0.001);
+                                if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+                                if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+                                gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+                                requestAnimationFrame(render);
+                            }
+                            render(0);
+                        })();
+                </script>
+            </div>
+            <!-- STITCH_SHADER_END:ANIMATION_2 -->
+            <!-- Tonal Overlay for Text Readability -->
+            <div class="absolute inset-0 bg-primary/30 z-10"></div>
+            <!-- Hero Content -->
+            <div class="relative z-20 text-center px-gutter max-w-3xl mx-auto flex flex-col items-center">
+                <span
+                    class="font-label-md text-label-md text-primary-fixed tracking-[0.2em] uppercase mb-4 animate-fade-in-up">Atelier
+                    de Prestige</span>
+                <h1
+                    class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-primary mb-6 animate-fade-in-up delay-100">
+                    Sublimez votre Beauté Naturelle
+                </h1>
+                <p class="font-body-lg text-body-lg text-primary-fixed-dim mb-8 max-w-xl animate-fade-in-up delay-200">
+                    L'excellence de la coiffure sur-mesure au cœur de Cotonou. Une approche artisanale pour révéler
+                    votre véritable essence.
+                </p>
+                <button
+                    class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-8 py-4 rounded-full ambient-shadow hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(255,191,0,0.2)] transition-all duration-300 ease-out animate-fade-in-up delay-300">
+                    Réserver maintenant
+                </button>
+            </div>
+        </section>
+        <!-- Bio Section -->
+        <section class="py-xl px-gutter max-w-container-max mx-auto relative">
+            <div class="absolute inset-0 bg-surface-container opacity-30 pointer-events-none"
+                style="background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 0h20v20H0V0zm10 10l10 10V0L10 10z\' fill=\'%23705a4c\' fill-opacity=\'0.05\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-lg items-center relative z-10">
+                <div class="md:col-span-5 relative">
+                    <div class="aspect-[4/5] rounded-t-full overflow-hidden ambient-shadow border-4 border-surface">
+                        <img class="w-full h-full object-cover"
+                            data-alt="An elegant, editorial-style photograph of a high-end hair salon interior in Cotonou. The space features warm terracotta walls, minimalist dark wood furniture, and soft, natural sunlight streaming in. A majestic monstera plant sits in the corner. The atmosphere is calm, luxurious, and rooted in Beninese heritage."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC10YfJxl6MrReHokNKeh96mDQ5DD20zewcSk9hPGPNEATX27LeD2bYz7J-_GbmFd4fSZG3cRadtCy-vz-6GFRoIaVI0uUPpvsEUYY7y37Y5asAaeM7z3s7A0jUUKl53PgYgb_vYOss7ZCcwfwI_Za9mp1MC0NEYl6XU7cr2qB3gL7fGDtDuEKKUipNv8t8pE8ANdRkAh8TQ8yQXsoXWBapx8AvUfCExv2alC8CPdSdf0O19QGgG3vR" />
+                    </div>
+                    <!-- Decorative element -->
+                    <div
+                        class="absolute -bottom-6 -right-6 w-24 h-24 bg-tertiary-fixed rounded-full -z-10 blur-2xl opacity-60">
+                    </div>
+                </div>
+                <div class="md:col-span-7 md:pl-md">
+                    <h2 class="font-headline-md text-headline-md text-primary mb-6">L'Artiste Derrière la Création</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                        Basée à Cotonou, je suis une coiffeuse freelance passionnée, dédiée à l'art complexe du soin
+                        capillaire afro et des coiffures protectrices de luxe. Mon approche fusionne les techniques
+                        ancestrales béninoises avec une esthétique moderne et épurée.
+                    </p>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        Chaque rendez-vous est une expérience privée, conçue pour honorer la texture unique de vos
+                        cheveux et créer des œuvres d'art vivantes, dans un environnement empreint de sérénité et
+                        d'élégance.
+                    </p>
+                    <div class="flex items-center space-x-2 text-secondary font-label-md text-label-md">
+                        <span class="material-symbols-outlined text-[20px]">location_on</span>
+                        <span>Cotonou, Bénin</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Bottom Navigation (Mobile) -->
+    <nav
+        class="md:hidden fixed bottom-base left-base right-base rounded-full z-50 bg-surface-container/95 backdrop-blur-lg shadow-[0_20px_40px_rgba(38,23,12,0.1)] flex justify-around items-center p-2">
+        <a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-2 hover:scale-110 transition-transform active:scale-95 duration-200"
+            href="./index.html">
+            <span class="material-symbols-outlined fill text-[24px] mb-1">home</span>
+            <span class="font-label-md text-label-md text-[10px]">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-2 hover:scale-110 transition-transform active:scale-95 duration-200"
+            href="./service.html">
+            <span class="material-symbols-outlined text-[24px] mb-1">content_cut</span>
+            <span class="font-label-md text-label-md text-[10px]">Services</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-2 hover:scale-110 transition-transform active:scale-95 duration-200"
+            href="./portfolio.html">
+            <span class="material-symbols-outlined text-[24px] mb-1">auto_awesome</span>
+            <span class="font-label-md text-label-md text-[10px]">Work</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-2 hover:scale-110 transition-transform active:scale-95 duration-200"
+            href="./reservation.html">
+            <span class="material-symbols-outlined text-[24px] mb-1">calendar_month</span>
+            <span class="font-label-md text-label-md text-[10px]">Book</span>
+        </a>
+    </nav>
+    <script>
+        // Simple script to trigger fade-in animations on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        entry.target.style.opacity = '1';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.opacity-0').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
